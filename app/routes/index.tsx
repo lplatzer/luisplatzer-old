@@ -1,7 +1,8 @@
 import * as React from 'react';
 import type { MetaFunction } from 'remix';
 import { Link } from 'remix';
-
+import {createTheme, ThemeProvider} from "@mui/material/styles";
+import theme from '../src/theme';
 // https://remix.run/api/conventions#meta
 export const meta: MetaFunction = () => {
   return {
@@ -13,10 +14,8 @@ export const meta: MetaFunction = () => {
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
   return (
-    <React.Fragment>
-      <Link to="/about" color="secondary">
-          Go to the about page
-        </Link>
-    </React.Fragment>
+    <ThemeProvider theme={theme}>
+      
+    </ThemeProvider>
   );
 }
